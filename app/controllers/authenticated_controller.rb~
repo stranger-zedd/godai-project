@@ -1,3 +1,0 @@
-class AuthenticatedController < ActionController::Base
-  before_filter :require_user
-end

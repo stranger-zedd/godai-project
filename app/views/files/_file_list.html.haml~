@@ -1,5 +1,0 @@
-%table.table-striped
-  - for file in files
-    %tr
-      - generate_row(file)
-      
