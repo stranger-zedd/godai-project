@@ -3,18 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 window.setBrowserClasses = () ->
-        $("#file-list").children.addClass("span12")
+        $('#file-list').children.addClass('span12')
 
 $(document).ready ->
-        $('#new-file-dialog').dialog
-                autoOpen: false,
-                modal: true,
-                height: 165,
-                buttons: {
-                        "Create": () ->
-                                $('#new-file-form').submit()
-                        "Cancel": () ->
-                                $(this).dialog("close")
-                                }
-                close: () ->
-                        $('#dir').val("")
+        $('#create-new-folder').click ->
+                $('#new-folder-form').submit()
+
+        $('#cancel-new-folder').click ->
+                $('#new-folder-dialog').modal('hide')

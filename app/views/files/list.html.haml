@@ -2,13 +2,16 @@
   .files-header
     .tools
       %span.nav-tools
-        = link_to raw('<i class="icon-home"></i>'), files_path(), :class => 'btn'
+        = link_to raw('<i class="icon-home"></i>'), files_path(), :class => 'btn', :title => "Home"
         - if(@dir_up)
-          = link_to raw('<i class="icon-arrow-up"></i>'), files_path(:dir => @dir_up), :class => 'btn'
+          = link_to raw('<i class="icon-arrow-up"></i>'), files_path(:dir => @dir_up), :class => 'btn', :title => "Up"
         - else
           = link_to raw('<i class="icon-arrow-up"></i>'), "#", :class => 'btn disabled'
       %span.file-tools
-        = link_to_function raw('<i class="icon-folder-close"></i>'), "$('#new-file-dialog').dialog('open')", :class => 'btn'
+        %a.btn.new-folder{:href => "#new-folder-dialog", :title => "New folder", "data-toggle" => "modal"}
+          %i.icon-folder-close
+        %a.btn.upload-file{:href => "#", :title => "Upload file"}
+          %i.icon-share-alt
       .clear
           
   = render 'file_list'

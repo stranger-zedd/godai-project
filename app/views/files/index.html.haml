@@ -1,8 +1,16 @@
-#new-file-dialog{:title => 'New folder'}
-  %form#new-file-form{:action => new_directory_path}
-    = text_field_tag 'dir', nil, :placeholder => 'Name'
-    = hidden_field_tag 'current_dir', @dir
+#new-folder-dialog.modal.hide.fade{:tabindex => "-1", :role => "dialog", "aria-labelledby" => "NewFolder"}
+  .modal-header
+    %button.close{:type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
+      %i.icon-remove
+    %h3 New Folder
+  %form#new-folder-form{:action => new_directory_path}
+    .modal-body
+      = text_field_tag 'dir', nil, :placeholder => 'Name'
+      = hidden_field_tag 'current_dir', @dir
+    .modal-footer
+      %a#cancel-new-folder.btn
+        Cancel
+      %a#create-new-folder.btn.btn-primary
+        Create
 .row-fluid#file-list
-  = render :template => "files/list"
-
-  
+  = render :template => "files/list"  
