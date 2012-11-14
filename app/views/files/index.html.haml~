@@ -1,0 +1,19 @@
+#new-file-dialog{:title => 'New folder'}
+  %form#new-file-form{:action => new_directory_path}
+    = text_field_tag 'dir', nil, :placeholder => 'Name'
+    = hidden_field_tag 'current_dir', @dir
+.row-fluid
+  .span12.container
+    .files-header
+      .tools
+        %span.nav-tools
+          = link_to raw('<i class="icon-home"></i>'), files_path(), :class => 'btn'
+          - if(@dir_up)
+            = link_to raw('<i class="icon-arrow-up"></i>'), files_path(:dir => @dir_up), :class => 'btn'
+          - else
+            = link_to raw('<i class="icon-arrow-up"></i>'), "#", :class => 'btn disabled'
+        %span.file-tools
+          = link_to_function raw('<i class="icon-folder-close"></i>'), "$('#new-file-dialog').dialog('open')", :class => 'btn'
+      .clear
+
+    = render 'file_list'

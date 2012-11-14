@@ -1,0 +1,16 @@
+class User < ActiveRecord::Base
+  attr_accessible :login, :persistence_token
+
+  acts_as_authentic do |c|
+    c.validate_password_field = false
+  end
+
+  def sftp_login?(password) 
+    begin
+     Net::SFTP.start('localhost', login, :password => password)
+    rescue
+      return false
+    end
+    return true
+  end
+end

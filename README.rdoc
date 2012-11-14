@@ -1,0 +1,1 @@
+The Godai Project is an attempt at a Rails file manager, for use in my home server.

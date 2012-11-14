@@ -1,0 +1,23 @@
+/* Place all the styles related to the files controller here.
+ * They will automatically be included in application.css.
+ * You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+.files-header {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+}
+
+.tools {
+    width: 10em;
+}
+
+.nav-tools {
+    margin-right: 1em;
+    float: left;
+} 
+
+.file-tools {
+    margin-left: 1em;
+    float: right;
+}

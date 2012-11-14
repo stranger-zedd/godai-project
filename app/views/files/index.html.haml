@@ -1,0 +1,8 @@
+#new-file-dialog{:title => 'New folder'}
+  %form#new-file-form{:action => new_directory_path}
+    = text_field_tag 'dir', nil, :placeholder => 'Name'
+    = hidden_field_tag 'current_dir', @dir
+.row-fluid#file-list
+  = render :template => "files/list"
+
+  

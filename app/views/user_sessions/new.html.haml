@@ -1,0 +1,14 @@
+.row-fluid
+  .span12.container  
+    %h3.page-header
+      = image_tag "tux.png"
+      Godai Login
+
+    = form_for @user_session, :html => { :class => 'form-vertical' } do |f|
+      = f.label :login, "Username"
+      = f.text_field :login
+      = f.label :password
+      = f.password_field :password
+      %br
+      = f.submit 'Login'
+  
